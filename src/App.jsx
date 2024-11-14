@@ -7,8 +7,6 @@ import { Layout } from "./components/UI/Layout"
 import { AdditionalInfo } from "./components/Pages/AdditionalInfo"
 import { ErrorPage } from "./components/Pages/ErrorPage"
 
-const API_URL = 'https://15734573-beec-42a6-9f83-e25fb78af6f2.mock.pstmn.io/hcassigment'
-
 function App() {
     const [data, setData] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
@@ -18,14 +16,13 @@ function App() {
     const fetchData = async () => {
         setIsLoading(true)
         try {
-            const response = await fetch(API_URL);
+            const response = await fetch('http://localhost:3000');
             const result = await response.json();
-            console.log(result)
             if(!response.ok){
                 setError(result.message || "Failed to get response, try again later")
                 return
             }
-            setData(result);
+            setData(result.data);
         } 
         catch(error){
           setError(error.message)
