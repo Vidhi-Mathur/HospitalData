@@ -8,7 +8,7 @@
     ```
 2. Navigate to project repository:
     ```bash
-   cd healthcred
+   cd HospitalData
     ```
 3. Install frontend dependencies: 
    ```bash
