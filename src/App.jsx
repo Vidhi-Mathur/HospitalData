@@ -16,7 +16,7 @@ function App() {
     const fetchData = async () => {
         setIsLoading(true)
         try {
-            const response = await fetch('http://localhost:3000');
+            const response = await fetch('https://hospitaldata-2.onrender.com/');
             const result = await response.json();
             if(!response.ok){
                 setError(result.message || "Failed to get response, try again later")
